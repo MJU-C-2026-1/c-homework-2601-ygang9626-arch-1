@@ -146,7 +146,7 @@ int main()
     printf("당신의 키 등급: %c\n", height);
     printf("당신의 재산 등급: %c\n", money);
     printf("당신의 학력 등급: %c\n", study);
-    printf("당신의 나이 등급: %.c\n", result);
+    printf("당신의 나이 등급: %c\n", result);
     ;
 
     return 0;
