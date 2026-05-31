@@ -10,7 +10,7 @@
 void inputAndAnalyze();                              
 void printSystemSummary();                           
 char getGrade(float value, int type);                
-
+int totalUsers = 0;
 int main()
 {
     system("chcp 65001"); 
