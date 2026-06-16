@@ -98,20 +98,54 @@ void printSystemSummary(char* p_initial, char* p_h_grade, char* p_m_grade, char*
 
 // 등급 판정 로직
 char getGrade(float value, int type) {
-    if (type == 1) { // 키
+    // 1. 키 등급
+    if (type == 1) {
         if (value <= 160) return 'E';
+        else if (value <= 165) return 'D';
         else if (value <= 170) return 'C';
-        else return 'A';
-    } else if (type == 2) { // 재산
+        else if (value <= 175) return 'B';
+        else if (value <= 181) return 'A';
+        else if (value <= 184) return 'S';
+        else if (value <= 187) return 'U';
+        else return 'F';
+    } 
+    // 2. 재산 등급
+    else if (type == 2) {
         if (value <= 1000) return 'E';
+        else if (value <= 2000) return 'D';
         else if (value <= 3000) return 'C';
-        else return 'A';
-    } else if (type == 3) { // 나이
-        if (value <= 25) return 'U';
-        else return 'E';
-    } else { // 학력
+        else if (value <= 5000) return 'B';
+        else if (value <= 7000) return 'A';
+        else if (value <= 10000) return 'S';
+        else if (value >= 20000) return 'U';
+        else return 'F';
+    } 
+    // 3. 나이 등급
+    else if (type == 3) {
+        if (value >= 21 && value <= 24) return 'U';
+        else if (value <= 26) return 'S';
+        else if (value <= 28) return 'A';
+        else if (value <= 31) return 'B';
+        else if (value <= 33) return 'C';
+        else if (value <= 35) return 'D';
+        else if (value <= 40) return 'E';
+        else return 'F';
+    } 
+    // 4. 학력 등급
+    else if (type == 4) {
         if (value == 1) return 'E';
-        else return 'A';
+        else if (value == 2) return 'D';
+        else if (value == 3) return 'C';
+        else if (value == 4) return 'B';
+        else if (value == 5) return 'A';
+        else if (value == 6) return 'S';
+        else if (value == 7) return 'U';
+        else return 'F';
+    }
+    return 'F';
+}
+
+
     }
 }
 
